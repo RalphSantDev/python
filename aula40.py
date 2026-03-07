@@ -3,7 +3,7 @@
 '''
 while True:
 
-    print("Calculadora")
+    print("__________Calculadora Simples__________")
     print("1 - Adição")
     print("2 - Subtração")
     print("3 - Multiplicação")

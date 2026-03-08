@@ -1,6 +1,6 @@
 ##### calculadora com while #####
-# Crie uma calculadora simples que permita ao usuário escolher entre adição, subtração, multiplicação e divisão. A calculadora deve continuar funcionando até que o usuário escolha sair.
-'''
+# calculadora simples que permite ao usuário escolher entre adição, subtração, multiplicação e divisão. O programa deve continuar a solicitar operações até que o usuário escolha sair.
+
 while True:
 
     print("__________Calculadora Simples__________")
@@ -12,12 +12,26 @@ while True:
 
     opcao = input("Escolha uma opção: ")
 
-    if opcao == "0":
-        print("Encerrando a calculadora. Até mais!")
-        break
+    try:
+        opcao_int = int(opcao)
+        if opcao_int < 0 or opcao_int > 4:
+            print("Erro: Por favor, escolha uma opção válida.")
+            continue
 
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
+    except ValueError:
+        print("Erro: Por favor, escolha uma opção válida.")
+        continue
+
+    num1 = input("Digite o primeiro número: ")
+    num2 = input("Digite o segundo número: ")
+
+    try:
+        num1 = float(num1)
+        num2 = float(num2)  
+    except ValueError:
+        print("Erro: Por favor, digite números válidos.")
+        continue
+    
 
     if opcao == "1":
         print("Realizando adição...")
@@ -44,8 +58,9 @@ while True:
             print("Operação realizada com sucesso!")
         else:
             print("Erro: Divisão por zero não é permitida.")
-'''
 
+            
+'''
 # calculadora sem menu, apenas com os inputs
 while True:
     
@@ -53,21 +68,41 @@ while True:
     numero_2 = (input("Digite o segundo número: "))
     operacao = input("Digite a operação (+, -, *, /): ")
 
+    numeros_validos = True
+
+
+    try: 
+        numero_1_float = float(numero_1)
+        numero_2_float = float(numero_2)
+        numeros_validos = True
+
+    except ValueError:
+        numeros_validos = None
+    
+    if numeros_validos is None:
+        print("Erro: Por favor, digite números válidos.")
+        continue
+
+    operadores_permitidos = ["+", "-", "*", "/"]
+    if operacao not in operadores_permitidos:
+        print("Erro: Operação inválida. Por favor, escolha entre +, -, * ou /.")
+        continue
+
     if operacao == "+":
-        resultado = int(numero_1) + int(numero_2)
+        resultado =float(numero_1) +float(numero_2)
         print(f'o resultado da adicao é: {resultado}')
         print("Operação realizada com sucesso!")
     elif operacao == "-":
-        resultado = int(numero_1) - int(numero_2)
+        resultado =float(numero_1) -float(numero_2)
         print(f'o resultado da subtração é: {resultado}')
         print("Operação realizada com sucesso!")
     elif operacao == "*":
-        resultado = int(numero_1) * int(numero_2)
+        resultado =float(numero_1) *float(numero_2)
         print(f'o resultado da mulltiplicação é: {resultado}')
         print("Operação realizada com sucesso!")
     elif operacao == "/":
-        if int(numero_2) != 0:
-            resultado = int(numero_1) / int(numero_2)
+        if float(numero_2) != 0:
+            resultado = float(numero_1) / float(numero_2)
             print(f'o resultado da divião é: {resultado}')
             print("operacao realizada com sucesso!")
         else:
@@ -77,3 +112,5 @@ while True:
     if sair is True:
         print("Encerrando o programa. Até mais!")
         break
+        
+'''

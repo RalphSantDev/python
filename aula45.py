@@ -1,48 +1,4 @@
-# Jogo de Adivinhar a Palavra Secreta
-'''
-palavra_secreta = "ariane"  # Defina a palavra secreta aqui
-letras_adivinhadas = set()
-tentativas = 0
-
-print("Bem-vindo ao jogo de adivinhar a palavra secreta!")
-print(f"A palavra tem {len(palavra_secreta)} letras.")
-
-# Mostrar palavra inicial
-palavra_atual = ' '.join([letra if letra in letras_adivinhadas else '_' for letra in palavra_secreta])
-print(palavra_atual)
-
-while True:
-    palpite = input("Digite uma letra ou 'desistir' para desistir: ").lower()
-    
-    if palpite == 'desistir':
-        print(f"Você desistiu! A palavra secreta era '{palavra_secreta}'.")
-        break
-    
-    if len(palpite) != 1 or not palpite.isalpha():
-        print("Por favor, digite apenas uma letra.")
-        continue
-    
-    if palpite in letras_adivinhadas:
-        print("Você já tentou essa letra.")
-        continue
-    
-    letras_adivinhadas.add(palpite)
-    tentativas += 1
-    
-    if palpite in palavra_secreta:
-        print(f'correto! A letra "{palpite}" está na palavra.')
-    else:
-        print(f'Incorreto! letra "{palpite}" não está na palavra.')
-    
-    palavra_atual = ' '.join([letra if letra in letras_adivinhadas else '_' for letra in palavra_secreta])
-    print(palavra_atual)
-    
-    if '_' not in palavra_atual:
-        print(f"Parabéns! Você adivinhou a palavra '{palavra_secreta}' em {tentativas} tentativas.")
-        break
-'''
-
-palavra_secreta = "a"
+palavra_secreta = "developer"
 letras_certas = ''
 tentativas = 0
 
@@ -72,9 +28,10 @@ while True:
     print(palavra_formada)
     
     if palavra_formada == palavra_secreta:
-        print('parabéns! Você adivinhou a palavra secreta em', tentativas, 'tentativas.')
+        print(f'Parabéns! Você adivinhou a palavra "{palavra_secreta}" em {tentativas} tentativas.')
+        print(f'A palavra secreta era "{palavra_secreta}".')
         tentativas = 0
         letras_certas = ''
-        break
+    break
         
 

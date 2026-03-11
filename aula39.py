@@ -1,3 +1,4 @@
+'''
 nome = input("Digite seu nome: ")
 
 indice = 0
@@ -9,3 +10,14 @@ while indice < len(nome):
     indice += 1
 
 print("Nome modificado:", novo_nome)
+'''
+
+# iterando sobre uma string com while
+string = 'Olá mundo'
+
+i = 0
+
+while i < len(string):
+    letra = string[i]
+    print(letra)
+    i += 1

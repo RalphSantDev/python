@@ -27,15 +27,11 @@ else:
 
 # 3
 # Peça a idade de uma pessoa e diga se ela pode votar ou não.
-idade = input('digite sua idade:')
-idade_int = int(idade)
-idade_para_votar = 17
-anos_para_votar = int(idade_para_votar - idade_int)
-
-if anos_para_votar == 0:
-    print('voce pode votar!')
-else: 
-    print(f'aguarde {anos_para_votar} Anos para poder votar')
+idade = int(input('Digite sua idade: '))
+if idade >= 16:
+    print('você pode votar!')
+else:
+    print('você não pode votar!')
 
 
 # 4
@@ -45,26 +41,13 @@ else:
 # ou zero
 
 
-while True:
- 
- try: 
-    
-    numero = input('digite um numero: ')
-    numero_int = int(numero)
-
-    if numero_int == 23:
-     print('saindo.....')
-     break
-
-    if numero_int < 0 and numero_int <= -1:
-     print ('seu numero é negativo')
-    elif numero_int != 0 and numero_int >=1 : 
-        print ('seu numero é positvo')
-    else:
-        print('seu numero é 0') 
-
- except ValueError: 
-   print('digite apenas numeros')
+numero = int(input('digite um numero: '))
+if numero > 0:
+    print(f'o numero {numero} é positivo')
+elif numero < 0:
+    print(f'o numero {numero} é negativo')
+else:
+    print('o numero é zero!')
 
 
 
@@ -79,14 +62,13 @@ while i < 10:
 
 # 6
 # Peça 5 números ao usuário e mostre a soma total deles.
-numero_1 = int(input('digite um numero: '))
-numero_2 = int(input('digite um numero: '))
-numero_3 = int(input('digite um numero: '))
-numero_4 = int(input('digite um numero: '))
-numero_5 = int(input('digite um numero: '))
-soma = numero_1 + numero_2 + numero_3 + numero_4 + numero_5
-
-print(f'A soma dos seus numeros é: {soma}')
+soma = 0
+contador = 0
+while contador < 5:
+    numero = int(input('digite um numero: '))
+    soma += numero
+    contador += 1
+print(f'a soma total dos numeros digitados é: {soma}')
 ''' 
 
 # 7
@@ -105,15 +87,23 @@ while True:
 
 # 8
 # Peça um número ao usuário e mostre a tabuada dele de 1 até 10.
+numero = int(input('digite um numero: '))
+print(f'A tabuada de {numero} é: ')
+
+for i in range(1,11):
+    resultado = numero * i
+    print(f'{numero} x {i} = {resultado}')
 
 
 # 9
 # Peça uma palavra ao usuário e mostre quantas letras ela possui.
-
+palavra = input('digite uma palavra: ')
+print(f'a palavra "{palavra}" possui {len(palavra)} letras.')
 
 # 10
 # Peça uma palavra ao usuário e mostre a palavra ao contrário.
-
+palavra = input('digite uma palavra: ')
+print(f'a palavra "{palavra}" ao contrário é: {palavra[::-1]}')
 
 # 11
 # Peça uma palavra e uma letra ao usuário e mostre
